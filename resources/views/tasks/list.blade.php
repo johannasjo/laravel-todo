@@ -18,6 +18,8 @@
 <div class="alert alert-danger">{{session('delete-message')}}</div>
 @elseif(Session::has('create-message'))
 <div class="alert alert-success">{{session('create-message')}}</div>
+@elseif(Session::has('edit-message'))
+<div class="alert alert-success">{{session('edit-message')}}</div>
 @endif
 
     <table class="table-bordered d-flex justify-content-center m-3">
@@ -39,6 +41,13 @@
             @method('DELETE')
 
             <td><button class="btn btn-danger m-2" type="submit">Delete</button></td>
+
+            </form>
+
+
+
+
+            <td><a href="{{route('tasks.edit', $task->id)}}" class="btn btn-success m-2">Edit</a></td>
 
             </form>
         </tr>

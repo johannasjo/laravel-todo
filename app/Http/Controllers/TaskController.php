@@ -65,7 +65,7 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        return view('tasks.edit', ['task' => $task]);
     }
 
     /**
@@ -77,7 +77,19 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        //
+        $this->validate($request, [
+        'title' => 'required',
+        'task' => 'required'
+        ]);
+
+        $task->title = $request['title'];
+        $task->task = $request['task'];
+
+
+        $task->save();
+        return redirect()->route('tasks')->with('edit-message', 'Your post was updated!');
+
+
     }
 
     /**
