@@ -14,6 +14,11 @@
 
 
 <h1 class="d-flex justify-content-center">Tasks</h1>
+@if(Session::has('delete-message'))
+<div class="alert alert-danger">{{session('delete-message')}}</div>
+@elseif(Session::has('create-message'))
+<div class="alert alert-success">{{session('create-message')}}</div>
+@endif
 
     <table class="table-bordered d-flex justify-content-center">
         <tr>
@@ -35,10 +40,8 @@
             <td><button class="btn btn-danger m-2" type="submit">Delete</button></td>
             </form>
         </tr>
-
-
-
     @endforeach
 </table>
+    <a href="{{route('tasks.create')}}" class="btn btn-primary lm-10" type="button">Create new task</a>
 </body>
 </html>

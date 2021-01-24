@@ -43,7 +43,7 @@ class TaskController extends Controller
         ]);
 
         Task::create($request->all());
-        return redirect('tasks')->with('success', 'Your task has been added!');
+        return redirect('tasks')->with('create-message', 'Your task has been added!');
     }
 
     /**
@@ -90,7 +90,7 @@ class TaskController extends Controller
     {
 
         $task->delete();
-        $request->session()->flash('message', 'Your task was deleted');
+        $request->session()->flash('delete-message', 'Your task was deleted');
         return redirect()->route('tasks');
     }
 }
