@@ -43,7 +43,7 @@ class TaskController extends Controller
         ]);
 
         Task::create($request->all());
-        return back()->with('success', 'Your task has been added!');
+        return redirect('tasks')->with('success', 'Your task has been added!');
     }
 
     /**
