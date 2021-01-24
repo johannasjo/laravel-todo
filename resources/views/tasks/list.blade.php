@@ -29,6 +29,11 @@
             <td>{{$task->task}}</td>
             <td>{{$task->created_at}}</td>
             <td>{{$task->updated_at}}</td>
+            <form method="post" action="{{route('tasks.delete', $task->id)}}" enctype="multipart/form-data">
+            @csrf
+            @method('DELETE')
+            <td><button class="btn btn-danger m-2" type="submit">Delete</button></td>
+            </form>
         </tr>
 
 
