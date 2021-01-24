@@ -11,19 +11,22 @@
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
     </head>
 
-<h1 class="d-flex justify-content-center">Create task</h1>
+<h1 class="d-flex justify-content-center m-4">Create task</h1>
 
-<form action="{{route('tasks.store')}}" method="POST" enctype="multipart/form-data" {{-- class="d-flex justify-content-center" --}}>
+<form action="{{route('tasks.store')}}" method="POST" enctype="multipart/form-data" class="m-3 p-3">
     @csrf
+
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" id="title" name="title">
+            <input type="text" id="title" name="title" class="form-control">
         </div>
         <div class="form-group">
             <label for="task">Task</label>
-            <input type="text" id="task" name="task">
+            <textarea rows="3" id="task" name="task" class="form-control"></textarea>
         </div>
-    <button type="submit" class="btn btn-primary">Create task</button>
+        <div class="d-flex rm-3 justify-content-end">
+            <button type="submit" class="btn btn-primary p-3">Create task</button>
+        </div>
 </form>
 
 
