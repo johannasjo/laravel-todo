@@ -13,7 +13,7 @@
 
 <h1 class="d-flex justify-content-center">Create task</h1>
 
-<form action="{{route('store')}}" method="POST" enctype="multipart/form-data" {{-- class="d-flex justify-content-center" --}}>
+<form action="{{route('tasks.store')}}" method="POST" enctype="multipart/form-data" {{-- class="d-flex justify-content-center" --}}>
     @csrf
         <div class="form-group">
             <label for="title">Title</label>
